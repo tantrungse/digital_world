@@ -43,6 +43,12 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  gem "rspec-rails", "~> 7.1.1"
+
+  gem 'capybara'
+
+  gem 'selenium-webdriver', '~> 4.32'
 end
 
 group :development do
@@ -50,3 +56,6 @@ group :development do
   gem "web-console"
 end
 
+group :test do
+  gem 'shoulda-matchers', '~> 6.0'
+end
