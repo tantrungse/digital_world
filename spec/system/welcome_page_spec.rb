@@ -8,6 +8,6 @@ RSpec.describe 'WelcomePage', type: :system do
 
   it 'is enhanced with JavaScript on', js: true do
     visit '/welcome'
-    expect(page).to have_text('ENHANCED!')
+    expect(page).to have_text('Hello World! ENHANCED!', wait: 5)
   end
 end

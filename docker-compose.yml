@@ -20,7 +20,7 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
   selenium_chrome:
-    image: selenium/standalone-chrome-debug
+    image: selenium/standalone-chrome:latest
     logging:
       driver: none
     ports:
