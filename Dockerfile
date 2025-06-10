@@ -9,11 +9,11 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - \
 
 COPY Gemfile* /usr/src/app/
 WORKDIR /usr/src/app
+
+ENV BUNDLE_PATH=/gems
+
 RUN bundle install
 
 COPY . /usr/src/app/
-
-# Precompile assets for TailwindCSS
-RUN bundle exec rails assets:precompile
 
 CMD ["bin/rails", "s", "-b", "0.0.0.0"]
