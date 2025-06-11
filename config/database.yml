@@ -7,10 +7,10 @@
 default: &default
   adapter: postgresql
   encoding: unicode
-  host: <%= ENV.fetch('DATABASE_HOST', 'localhost') %>
-  username: <%= ENV.fetch('POSTGRES_USER', 'postgres') %>
-  password: <%= ENV.fetch('POSTGRES_PASSWORD', '') %>
-  database: <%= ENV.fetch('POSTGRES_DB', 'digital_world_development') %>
+  host: <%= ENV.fetch('DATABASE_HOST') %>
+  username: <%= ENV.fetch('POSTGRES_USER') %>
+  password: <%= ENV.fetch('POSTGRES_PASSWORD') %>
+  database: <%= ENV.fetch('POSTGRES_DB') %>
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   variables:
     statement_timeout: 5000
@@ -23,4 +23,5 @@ test:
   database: digital_world_test
 
 production:
+  <<: *default
   url: <%= ENV['DATABASE_URL'] %>
