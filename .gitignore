@@ -36,7 +36,6 @@
 
 /Dockerfile_backup
 
-/app/assets/builds/*
-!/app/assets/builds/.keep
 .byebug_history
-app/assets/builds/.keep
+
+/coverage/*

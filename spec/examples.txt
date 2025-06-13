@@ -1,0 +1,4 @@
+example_id                              | status | run_time        |
+--------------------------------------- | ------ | --------------- |
+./spec/system/welcome_page_spec.rb[1:1] | passed | 0.12044 seconds |
+./spec/system/welcome_page_spec.rb[1:2] | passed | 0.8608 seconds  |
