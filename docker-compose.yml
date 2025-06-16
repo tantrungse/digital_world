@@ -12,6 +12,21 @@ services:
     env_file:
       - .env/development/web
       - .env/development/database
+    environment:
+      NODE_OPTIONS: "--openssl-legacy-provider"
+
+  webpack_dev_server:
+    build: .
+    command: ./bin/webpack-dev-server
+    ports:
+      - 3035:3035
+    volumes:
+      - .:/usr/src/app
+    env_file:
+      - .env/development/web
+      - .env/development/database
+    environment:
+      - WEBPACKER_DEV_SERVER_HOST=0.0.0.0
   redis:
     image: redis
   database:
@@ -29,3 +44,4 @@ services:
 volumes:
   db_data:
   gem_cache:
+
