@@ -1,7 +1,9 @@
 const { environment } = require('@rails/webpacker')
+const webpack = require('webpack')
 
-// Remove postcss-loader if it's present
-const cssLoader = environment.loaders.get('css')
-cssLoader.use = cssLoader.use.filter(loader => loader.loader !== 'postcss-loader')
+environment.loaders.append('css', {
+  test: /\.css$/i,
+  use: ['style-loader', 'css-loader', 'postcss-loader'],
+})
 
 module.exports = environment

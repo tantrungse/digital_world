@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 
 // Optional: import any global styles or libraries here
 // import "../../assets/stylesheets/application.css";
+import '../stylesheets/tailwind.css'
 import '../stylesheets/application.css';
 
 // Mount your root React component (optional)

@@ -1,7 +1,7 @@
 import React from 'react'
 import { createRoot } from 'react-dom/client'
 
-const Hello = ({ name }) => <div>Hello {name}!</div>
+const Hello = ({ name }) => <div className="font-bold">Hello {name}!</div>
 
 document.addEventListener('DOMContentLoaded', () => {
   const node = document.getElementById('hello-react')
