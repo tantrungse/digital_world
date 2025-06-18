@@ -1,9 +1,12 @@
 const { environment } = require('@rails/webpacker')
-const webpack = require('webpack')
 
-environment.loaders.append('css', {
-  test: /\.css$/i,
-  use: ['style-loader', 'css-loader', 'postcss-loader'],
-})
+// Add css-loader and postcss-loader configuration
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
+// Configure CSS processing
+environment.loaders.get('css').use.find(item => item.loader === 'css-loader').options = {
+  ...environment.loaders.get('css').use.find(item => item.loader === 'css-loader').options,
+  importLoaders: 2
+}
 
 module.exports = environment

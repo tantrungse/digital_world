@@ -1,5 +1,3 @@
-const { runtime } = require("webpack")
-
 module.exports = function(api) {
   var validEnv = ['development', 'test', 'production']
   var currentEnv = api.env()
@@ -27,10 +25,7 @@ module.exports = function(api) {
           },
           modules: 'commonjs'
         },
-        '@babel/preset-react',
-        {
-          runtime: 'automatic'
-        }
+        '@babel/preset-react'
       ],
       (isProductionEnv || isDevelopmentEnv) && [
         '@babel/preset-env',

@@ -1,17 +1,15 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
-
-// Optional: import any global styles or libraries here
-// import "../../assets/stylesheets/application.css";
-import '../stylesheets/tailwind.css'
-import '../stylesheets/application.css';
-
-// Mount your root React component (optional)
-import Hello from './hello_react.jsx'
+import { createRoot } from 'react-dom/client'
+import '../stylesheets/application.css'
+import Hello from './components/hello_react'
 
 document.addEventListener('DOMContentLoaded', () => {
-  const node = document.getElementById('root')
+  const node = document.getElementById('hello-react')
+  console.log("Hi")
+
   if (node) {
-    ReactDOM.render(<Hello />, node)
+    console.log("Hello")
+    const root = createRoot(node)
+    root.render(<Hello name="Vo Tan Trung" />)
   }
-})
+});
