@@ -53,7 +53,7 @@ group :development, :test do
 
   gem 'capybara'
 
-  gem 'selenium-webdriver', '~> 4.32'
+  gem 'selenium-webdriver', '~> 4.38'
 
   gem 'byebug'
 end
